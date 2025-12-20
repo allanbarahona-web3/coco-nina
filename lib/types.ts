@@ -8,20 +8,32 @@
  * Represents a unique handmade jewelry piece
  * 
  * @interface Product
- * @property {string} id - Unique identifier (e.g., 'br-001')
+ * @property {string} id - Unique identifier (e.g., 'origins-br-001')
+ * @property {string} sku - Unique SKU code (e.g., 'COCO-NINA-DIC25-BR-001')
  * @property {string} name - Product display name
+ * @property {number} price - Price in USD
+ * @property {string} collection - Collection name (e.g., 'Origins')
+ * @property {string} collectionDate - Collection date (e.g., 'DIC25')
+ * @property {string} origin - Origin country (e.g., 'Costa Rica')
  * @property {ProductCategory} category - Product category slug
  * @property {string} shortDescription - Brief product description
+ * @property {string} [fullDescription] - Full product description
  * @property {string[]} materials - Array of materials used
  * @property {string[]} techniques - Crafting techniques applied
  * @property {string[]} tags - Product tags (e.g., 'Unique Piece', 'Handmade')
  * @property {ProductImage} image - Product image data
- * @property {number} [price] - Optional price (for future e-commerce)
- * @property {boolean} [available] - Optional availability status
+ * @property {string[]} [gallery] - Array of additional product images
+ * @property {number} [stock] - Stock quantity
+ * @property {boolean} [available] - Availability status
  */
 export interface Product {
   id: string;
+  sku: string;
   name: string;
+  price: number;
+  collection: string;
+  collectionDate: string;
+  origin: string;
   category: ProductCategory;
   shortDescription: string;
   fullDescription?: string;
@@ -30,9 +42,8 @@ export interface Product {
   tags: string[];
   image: ProductImage;
   gallery?: string[];
-  price?: number;
-  available?: boolean;
   stock?: number;
+  available?: boolean;
 }
 
 /**

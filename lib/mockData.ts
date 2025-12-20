@@ -5,16 +5,36 @@
  */
 
 import type { Product, Category } from './types';
+import { generateSKU } from './sku';
 
 // Export types for backward compatibility
 export type { Product, Category } from './types';
+
+/**
+ * Collection metadata
+ * Used to generate SKUs consistently
+ */
+const CURRENT_COLLECTION = {
+  creator: 'NINA',
+  dateCode: 'DIC25', // December 2025
+};
 
 // Mock product data - 12 unique handmade jewelry pieces
 export const products: Product[] = [
   // Bracelets
   {
-    id: 'br-001',
+    id: 'origins-br-001',
+    sku: generateSKU({
+      creator: CURRENT_COLLECTION.creator,
+      collectionDate: CURRENT_COLLECTION.dateCode,
+      category: 'bracelets',
+      sequenceNumber: 1,
+    }),
     name: 'Pearl Embrace Bracelet',
+    price: 85.00,
+    collection: 'Origins',
+    collectionDate: 'DIC25',
+    origin: 'Costa Rica',
     category: 'bracelets',
     shortDescription: 'Elegant wire-wrapped bracelet featuring freshwater pearls and bronze wire with 18k gold plating.',
     fullDescription: `This exquisite handcrafted bracelet showcases the perfect blend of elegance and artisanal craftsmanship. Each freshwater pearl is carefully selected and hand-wrapped with premium bronze AAA wire, finished with 18k gold plating for a luxurious touch.
@@ -35,11 +55,21 @@ CARE: Keep away from moisture and harsh chemicals. Store in a cool, dry place.`,
       'https://images.unsplash.com/photo-1515562141207-6811bcdd55f7?w=800&q=80',
     ],
     stock: 1,
-    available: true
+    available: true,
   },
   {
-    id: 'br-002',
+    id: 'origins-br-002',
+    sku: generateSKU({
+      creator: CURRENT_COLLECTION.creator,
+      collectionDate: CURRENT_COLLECTION.dateCode,
+      category: 'bracelets',
+      sequenceNumber: 2,
+    }),
     name: 'Tiger Eye Protection',
+    price: 75.00,
+    collection: 'Origins',
+    collectionDate: 'DIC25',
+    origin: 'Costa Rica',
     category: 'bracelets',
     shortDescription: 'Bold bracelet combining tiger eye stones with intricate wire weaving on stainless steel base.',
     fullDescription: `A powerful statement piece featuring natural tiger eye stones known for their protective properties. Each stone is hand-selected and wrapped with intricate wire weaving, creating a striking visual effect.
@@ -60,11 +90,21 @@ PROPERTIES: Tiger Eye is believed to bring courage, strength, and clarity to the
       'https://images.unsplash.com/photo-1611591437281-460bfbe1220a?w=800&q=80',
     ],
     stock: 1,
-    available: true
+    available: true,
   },
   {
-    id: 'br-003',
+    id: 'origins-br-003',
+    sku: generateSKU({
+      creator: CURRENT_COLLECTION.creator,
+      collectionDate: CURRENT_COLLECTION.dateCode,
+      category: 'bracelets',
+      sequenceNumber: 3,
+    }),
     name: 'Volcanic Energy Band',
+    price: 65.00,
+    collection: 'Origins',
+    collectionDate: 'DIC25',
+    origin: 'Costa Rica',
     category: 'bracelets',
     shortDescription: 'Minimalist design featuring volcanic stone beads wrapped with bronze wire.',
     fullDescription: `A minimalist masterpiece that combines raw volcanic stone with elegant bronze wire work. The natural gray tones of the volcanic beads create a contemporary look perfect for everyday wear.
@@ -85,13 +125,23 @@ DESIGN: Inspired by natural elements and modern aesthetics.`,
       'https://images.unsplash.com/photo-1515562141207-6811bcdd55f7?w=800&q=80',
     ],
     stock: 1,
-    available: true
+    available: true,
   },
   
   // Necklaces
   {
-    id: 'nk-001',
+    id: 'origins-nk-001',
+    sku: generateSKU({
+      creator: CURRENT_COLLECTION.creator,
+      collectionDate: CURRENT_COLLECTION.dateCode,
+      category: 'necklaces',
+      sequenceNumber: 1,
+    }),
     name: 'Ocean Pearl Cascade',
+    price: 95.00,
+    collection: 'Origins',
+    collectionDate: 'DIC25',
+    origin: 'Costa Rica',
     category: 'necklaces',
     shortDescription: 'Stunning necklace showcasing mother-of-pearl and freshwater pearls in an elegant wire-wrapped design.',
     fullDescription: `An enchanting necklace that captures the essence of the ocean. This piece features a cascading design with mother-of-pearl and freshwater pearls, meticulously hand-wrapped with premium bronze wire and finished with 18k gold plating.
@@ -112,11 +162,21 @@ LENGTH: Adjustable (available in 16", 18", and 20" lengths)`,
       'https://images.unsplash.com/photo-1515562141207-6811bcdd55f7?w=800&q=80',
     ],
     stock: 1,
-    available: true
+    available: true,
   },
   {
-    id: 'nk-002',
+    id: 'origins-nk-002',
+    sku: generateSKU({
+      creator: CURRENT_COLLECTION.creator,
+      collectionDate: CURRENT_COLLECTION.dateCode,
+      category: 'necklaces',
+      sequenceNumber: 2,
+    }),
     name: 'Agate Harmony',
+    price: 80.00,
+    collection: 'Origins',
+    collectionDate: 'DIC25',
+    origin: 'Costa Rica',
     category: 'necklaces',
     shortDescription: 'Natural agate centerpiece surrounded by delicate wire work and zirconia accents.',
     fullDescription: `A mesmerizing combination of natural agate and zirconia creates this stunning necklace. The agate stone is carefully framed with intricate wire work, creating a harmonious balance of nature and artistry.
@@ -137,11 +197,21 @@ PROPERTIES: Agate is believed to promote balance, harmony, and inner peace.`,
       'https://images.unsplash.com/photo-1611591437281-460bfbe1220a?w=800&q=80',
     ],
     stock: 1,
-    available: true
+    available: true,
   },
   {
-    id: 'nk-003',
+    id: 'origins-nk-003',
+    sku: generateSKU({
+      creator: CURRENT_COLLECTION.creator,
+      collectionDate: CURRENT_COLLECTION.dateCode,
+      category: 'necklaces',
+      sequenceNumber: 3,
+    }),
     name: 'Jade Serenity',
+    price: 90.00,
+    collection: 'Origins',
+    collectionDate: 'DIC25',
+    origin: 'Costa Rica',
     category: 'necklaces',
     shortDescription: 'Elegant jade pendant wrapped in intricate wire patterns with gold accents.',
     fullDescription: `This serene jade pendant embodies tranquility and elegance. Wrapped in intricate wire patterns and finished with 18k gold plating, it's a perfect blend of traditional craftsmanship and timeless beauty.
@@ -162,13 +232,23 @@ CARE: Avoid harsh chemicals and excessive heat. Clean gently with a soft cloth.`
       'https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?w=800&q=80',
     ],
     stock: 1,
-    available: true
+    available: true,
   },
   
   // Rings
   {
-    id: 'rg-001',
+    id: 'origins-rg-001',
+    sku: generateSKU({
+      creator: CURRENT_COLLECTION.creator,
+      collectionDate: CURRENT_COLLECTION.dateCode,
+      category: 'rings',
+      sequenceNumber: 1,
+    }),
     name: 'Garnet Wire Crown',
+    price: 70.00,
+    collection: 'Origins',
+    collectionDate: 'DIC25',
+    origin: 'Costa Rica',
     category: 'rings',
     shortDescription: 'Exquisite ring featuring a vibrant garnet stone set in an ornate wire crown design.',
     fullDescription: `A regal piece featuring a deep red garnet stone crowned with intricate wire work. The crown design elevates this ring to statement status, perfect for those who appreciate bold, artistic jewelry.
@@ -189,11 +269,21 @@ PROPERTIES: Garnet is believed to bring passion, energy, and vitality to the wea
       'https://images.unsplash.com/photo-1515562141207-6811bcdd55f7?w=800&q=80',
     ],
     stock: 1,
-    available: true
+    available: true,
   },
   {
-    id: 'rg-002',
+    id: 'origins-rg-002',
+    sku: generateSKU({
+      creator: CURRENT_COLLECTION.creator,
+      collectionDate: CURRENT_COLLECTION.dateCode,
+      category: 'rings',
+      sequenceNumber: 2,
+    }),
     name: 'Crystal Spiral Ring',
+    price: 55.00,
+    collection: 'Origins',
+    collectionDate: 'DIC25',
+    origin: 'Costa Rica',
     category: 'rings',
     shortDescription: 'Modern design featuring Czech crystals wrapped in a mesmerizing spiral pattern.',
     fullDescription: `A contemporary masterpiece featuring sparkling Czech crystals arranged in a hypnotic spiral pattern. This ring combines modern aesthetics with traditional wire-wrapping techniques.
@@ -214,11 +304,21 @@ DESIGN: Inspired by natural spirals found in nature.`,
       'https://images.unsplash.com/photo-1611591437281-460bfbe1220a?w=800&q=80',
     ],
     stock: 1,
-    available: true
+    available: true,
   },
   {
-    id: 'rg-003',
+    id: 'origins-rg-003',
+    sku: generateSKU({
+      creator: CURRENT_COLLECTION.creator,
+      collectionDate: CURRENT_COLLECTION.dateCode,
+      category: 'rings',
+      sequenceNumber: 3,
+    }),
     name: 'Pearl Elegance Band',
+    price: 65.00,
+    collection: 'Origins',
+    collectionDate: 'DIC25',
+    origin: 'Costa Rica',
     category: 'rings',
     shortDescription: 'Delicate ring with freshwater pearl centerpiece and fine wire detailing.',
     fullDescription: `Elegance personified. This delicate ring features a lustrous freshwater pearl set with fine wire detailing. The minimalist design lets the pearl's natural beauty shine through.
@@ -239,13 +339,23 @@ CARE: Keep away from moisture and harsh chemicals to maintain the pearl's luster
       'https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?w=800&q=80',
     ],
     stock: 1,
-    available: true
+    available: true,
   },
   
   // Earrings
   {
-    id: 'er-001',
+    id: 'origins-er-001',
+    sku: generateSKU({
+      creator: CURRENT_COLLECTION.creator,
+      collectionDate: CURRENT_COLLECTION.dateCode,
+      category: 'earrings',
+      sequenceNumber: 1,
+    }),
     name: 'Quartz Cascade Earrings',
+    price: 60.00,
+    collection: 'Origins',
+    collectionDate: 'DIC25',
+    origin: 'Costa Rica',
     category: 'earrings',
     shortDescription: 'Elegant drop earrings featuring clear quartz wrapped in flowing wire patterns.',
     fullDescription: `Cascading elegance. These drop earrings feature clear quartz stones wrapped in flowing wire patterns that seem to dance down from the ear. The combination of natural quartz with intricate wire work creates a sophisticated piece.
@@ -264,11 +374,21 @@ Perfect for formal events or everyday elegance. The clear quartz is believed to 
       'https://images.unsplash.com/photo-1611591437281-460bfbe1220a?w=800&q=80',
     ],
     stock: 1,
-    available: true
+    available: true,
   },
   {
-    id: 'er-002',
+    id: 'origins-er-002',
+    sku: generateSKU({
+      creator: CURRENT_COLLECTION.creator,
+      collectionDate: CURRENT_COLLECTION.dateCode,
+      category: 'earrings',
+      sequenceNumber: 2,
+    }),
     name: 'Mother-of-Pearl Drops',
+    price: 70.00,
+    collection: 'Origins',
+    collectionDate: 'DIC25',
+    origin: 'Costa Rica',
     category: 'earrings',
     shortDescription: 'Sophisticated earrings combining iridescent mother-of-pearl with intricate wire work.',
     fullDescription: `Iridescent beauty at its finest. These sophisticated earrings combine iridescent mother-of-pearl with layered wire work and zirconia accents. The play of light on the pearl creates a mesmerizing effect.
@@ -287,11 +407,21 @@ Ideal for those who appreciate subtle luxury and natural beauty.`,
       'https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?w=800&q=80',
     ],
     stock: 1,
-    available: true
+    available: true,
   },
   {
-    id: 'er-003',
+    id: 'origins-er-003',
+    sku: generateSKU({
+      creator: CURRENT_COLLECTION.creator,
+      collectionDate: CURRENT_COLLECTION.dateCode,
+      category: 'earrings',
+      sequenceNumber: 3,
+    }),
     name: 'Czech Crystal Hoops',
+    price: 55.00,
+    collection: 'Origins',
+    collectionDate: 'DIC25',
+    origin: 'Costa Rica',
     category: 'earrings',
     shortDescription: 'Modern hoop earrings adorned with sparkling Czech crystals and fine wire weaving.',
     fullDescription: `Modern meets traditional in these stunning hoop earrings. Adorned with sparkling Czech crystals and featuring fine wire weaving, they're the perfect blend of contemporary design and artisanal craftsmanship.
@@ -310,7 +440,7 @@ Versatile enough for everyday wear, yet statement-making for special occasions.`
       'https://images.unsplash.com/photo-1611591437281-460bfbe1220a?w=800&q=80',
     ],
     stock: 1,
-    available: true
+    available: true,
   },
 ];
 
