@@ -43,7 +43,7 @@ export default function Navbar() {
               href="/catalog" 
               className="text-sm font-medium text-gray-700 hover:text-primary-600 transition-colors"
             >
-              Catalog
+              Collections
             </Link>
             <Link 
               href="/#about" 
@@ -90,7 +90,7 @@ export default function Navbar() {
                 onClick={toggleMenu}
                 className="text-sm font-medium text-gray-700 hover:text-primary-600 transition-colors"
               >
-                Catalog
+                Collections
               </Link>
               <Link 
                 href="/#about" 

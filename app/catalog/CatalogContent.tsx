@@ -41,11 +41,11 @@ export default function CatalogContent({ products }: CatalogContentProps) {
         {/* Header */}
         <div className="text-center mb-12">
           <h1 className="text-4xl md:text-5xl font-serif font-bold text-gray-900 mb-4">
-            Our Jewelry Collection
+            Origins Collection
           </h1>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-            Discover unique handmade pieces crafted with premium materials and 
-            fine wire-wrapping techniques. Each piece is one of a kind.
+            Our first limited collection of handcrafted jewelry.
+Each piece is one of a kind and will never be reproduced.
           </p>
         </div>
 
@@ -54,7 +54,7 @@ export default function CatalogContent({ products }: CatalogContentProps) {
           <div className="flex items-center justify-center mb-6">
             <Filter className="w-5 h-5 text-gray-600 mr-2" />
             <span className="text-sm font-semibold text-gray-700 uppercase tracking-wide">
-              Filter by Category
+              Explore by Category
             </span>
           </div>
 
