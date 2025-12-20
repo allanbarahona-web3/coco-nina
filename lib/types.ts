@@ -24,12 +24,15 @@ export interface Product {
   name: string;
   category: ProductCategory;
   shortDescription: string;
+  fullDescription?: string;
   materials: string[];
   techniques: string[];
   tags: string[];
   image: ProductImage;
+  gallery?: string[];
   price?: number;
   available?: boolean;
+  stock?: number;
 }
 
 /**
