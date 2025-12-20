@@ -87,7 +87,7 @@ export default function ProductCard({ product }: ProductCardProps) {
         {/* Inquire Button */}
         <button
           onClick={() => {
-            const message = `Hello! I'm interested in the ${product.name} (${product.category}). Could you provide more information?`;
+            const message = `Hello! I'm contacting you from the Coco&Nina website.\n\nI'm interested in:\n📿 ${product.name}\n🏷️ Category: ${product.category}\n\nCould you provide more information about this piece?`;
             const whatsappUrl = `https://wa.me/${process.env.NEXT_PUBLIC_WHATSAPP_NUMBER?.replace(/[^\d+]/g, '')}?text=${encodeURIComponent(message)}`;
             window.open(whatsappUrl, '_blank', 'noopener,noreferrer');
           }}

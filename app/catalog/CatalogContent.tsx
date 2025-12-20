@@ -115,18 +115,19 @@ export default function CatalogContent({ products }: CatalogContentProps) {
         {/* Info Banner */}
         <div className="mt-20 bg-white rounded-2xl shadow-lg p-8 md:p-12 text-center">
           <h3 className="text-2xl font-serif font-semibold text-gray-900 mb-4">
-            Each Piece is Unique
+            Each Piece Is Unique
           </h3>
-          <p className="text-gray-600 max-w-2xl mx-auto mb-6">
-            All our jewelry is handcrafted to order. Because each piece is unique, 
-            slight variations in design and materials may occur, making your piece 
-            truly one of a kind.
+          <p className="text-gray-600 max-w-2xl mx-auto mb-6 leading-relaxed">
+            All pieces in our collections are handcrafted and ready to ship. Each design is one of a kind and will not be reproduced once sold.
+          </p>
+          <p className="text-gray-600 max-w-2xl mx-auto mb-8 leading-relaxed">
+            Looking for something truly special? We also accept custom requests crafted with the same care, materials, and artisanal techniques.
           </p>
           <Link
             href="/#contact"
             className="inline-block bg-primary-600 hover:bg-primary-700 text-white font-medium px-8 py-3 rounded-lg transition-colors"
           >
-            Custom Orders Available
+            Inquire About a Custom Piece
           </Link>
         </div>
       </div>
