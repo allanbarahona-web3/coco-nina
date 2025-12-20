@@ -75,6 +75,22 @@ export default function Navbar() {
               )}
             </div>
 
+            {/* Fragrance */}
+            <Link 
+              href="/fragrance" 
+              className="text-sm font-medium text-gray-700 hover:text-primary-600 transition-colors"
+            >
+              Fragrance
+            </Link>
+
+            {/* Apparel */}
+            <Link 
+              href="/apparel" 
+              className="text-sm font-medium text-gray-700 hover:text-primary-600 transition-colors"
+            >
+              Apparel
+            </Link>
+
             <Link 
               href="/#about" 
               className="text-sm font-medium text-gray-700 hover:text-primary-600 transition-colors"
@@ -149,6 +165,23 @@ export default function Navbar() {
               >
                 About
               </Link>
+
+              <Link 
+                href="/fragrance" 
+                onClick={toggleMenu}
+                className="text-sm font-medium text-gray-700 hover:text-primary-600 transition-colors"
+              >
+                Fragrance
+              </Link>
+
+              <Link 
+                href="/apparel" 
+                onClick={toggleMenu}
+                className="text-sm font-medium text-gray-700 hover:text-primary-600 transition-colors"
+              >
+                Apparel
+              </Link>
+
               <Link 
                 href="/#contact" 
                 onClick={toggleMenu}
