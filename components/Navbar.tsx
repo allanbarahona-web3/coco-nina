@@ -3,12 +3,17 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { useState } from 'react';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, ChevronDown } from 'lucide-react';
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isCollectionsOpen, setIsCollectionsOpen] = useState(false);
 
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
+
+  const collections = [
+    { name: 'Origins Collection', slug: 'origins' },
+  ];
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm border-b border-gray-100">
@@ -39,12 +44,37 @@ export default function Navbar() {
             >
               Home
             </Link>
-            <Link 
-              href="/catalog" 
-              className="text-sm font-medium text-gray-700 hover:text-primary-600 transition-colors"
-            >
-              Collections
-            </Link>
+
+            {/* Collections Dropdown */}
+            <div className="relative group">
+              <button 
+                className="flex items-center space-x-1 text-sm font-medium text-gray-700 hover:text-primary-600 transition-colors"
+                onMouseEnter={() => setIsCollectionsOpen(true)}
+                onMouseLeave={() => setIsCollectionsOpen(false)}
+              >
+                <span>Collections</span>
+                <ChevronDown className="w-4 h-4" />
+              </button>
+              
+              {isCollectionsOpen && (
+                <div 
+                  className="absolute top-full left-0 mt-1 w-48 bg-white border border-gray-100 rounded-lg shadow-lg py-2 z-50"
+                  onMouseEnter={() => setIsCollectionsOpen(true)}
+                  onMouseLeave={() => setIsCollectionsOpen(false)}
+                >
+                  {collections.map((col) => (
+                    <Link
+                      key={col.slug}
+                      href="/catalog"
+                      className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-primary-600 transition-colors"
+                    >
+                      {col.name}
+                    </Link>
+                  ))}
+                </div>
+              )}
+            </div>
+
             <Link 
               href="/#about" 
               className="text-sm font-medium text-gray-700 hover:text-primary-600 transition-colors"
@@ -85,13 +115,33 @@ export default function Navbar() {
               >
                 Home
               </Link>
-              <Link 
-                href="/catalog" 
-                onClick={toggleMenu}
-                className="text-sm font-medium text-gray-700 hover:text-primary-600 transition-colors"
-              >
-                Collections
-              </Link>
+
+              {/* Mobile Collections Submenu */}
+              <div>
+                <button 
+                  onClick={() => setIsCollectionsOpen(!isCollectionsOpen)}
+                  className="flex items-center space-x-1 text-sm font-medium text-gray-700 hover:text-primary-600 transition-colors w-full"
+                >
+                  <span>Collections</span>
+                  <ChevronDown className={`w-4 h-4 transition-transform ${isCollectionsOpen ? 'rotate-180' : ''}`} />
+                </button>
+                
+                {isCollectionsOpen && (
+                  <div className="pl-4 mt-2 space-y-2">
+                    {collections.map((col) => (
+                      <Link
+                        key={col.slug}
+                        href="/catalog"
+                        onClick={toggleMenu}
+                        className="block text-sm text-gray-600 hover:text-primary-600 transition-colors"
+                      >
+                        {col.name}
+                      </Link>
+                    ))}
+                  </div>
+                )}
+              </div>
+
               <Link 
                 href="/#about" 
                 onClick={toggleMenu}
