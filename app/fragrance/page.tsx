@@ -36,15 +36,12 @@ export default function FragrancePage() {
 
           {/* Image */}
           <div className="w-full h-96 lg:h-full lg:min-h-screen">
-            <div className="relative w-full h-full bg-gradient-to-br from-amber-50 to-amber-100 rounded-2xl overflow-hidden flex items-center justify-center">
-              <div className="text-center px-8">
-                <div className="inline-block">
-                  <p className="text-6xl mb-4">🌸</p>
-                  <p className="text-gray-500 text-lg font-medium">
-                    Editorial image coming soon
-                  </p>
-                </div>
-              </div>
+            <div className="relative w-full h-full rounded-2xl overflow-hidden">
+              <img
+                src="/branding/Fragances .png"
+                alt="Premium fragrances collection"
+                className="w-full h-full object-cover"
+              />
             </div>
           </div>
         </div>

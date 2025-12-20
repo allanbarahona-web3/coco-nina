@@ -36,15 +36,12 @@ export default function ApparelPage() {
 
           {/* Image */}
           <div className="w-full h-96 lg:h-full lg:min-h-screen">
-            <div className="relative w-full h-full bg-gradient-to-br from-slate-50 to-slate-100 rounded-2xl overflow-hidden flex items-center justify-center">
-              <div className="text-center px-8">
-                <div className="inline-block">
-                  <p className="text-6xl mb-4">👕</p>
-                  <p className="text-gray-500 text-lg font-medium">
-                    Editorial image coming soon
-                  </p>
-                </div>
-              </div>
+            <div className="relative w-full h-full rounded-2xl overflow-hidden">
+              <img
+                src="/branding/Apparel.png"
+                alt="Premium apparel collection"
+                className="w-full h-full object-cover"
+              />
             </div>
           </div>
         </div>
