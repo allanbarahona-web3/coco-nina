@@ -1,8 +1,9 @@
 'use client';
 
 import Link from 'next/link';
+import Image from 'next/image';
 import { useState } from 'react';
-import { Menu, X, ShoppingBag } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -16,13 +17,18 @@ export default function Navbar() {
           {/* Logo */}
           <Link 
             href="/" 
-            className="flex items-center space-x-2 group"
+            className="flex items-center group"
             aria-label="Coco Nina Jewelry Home"
           >
-            <ShoppingBag className="w-6 h-6 text-primary-600 transition-transform group-hover:scale-110" />
-            <span className="text-xl font-serif font-semibold text-gray-900">
-              Coco Nina
-            </span>
+            <div className="relative h-16 w-48 transition-transform group-hover:scale-105">
+              <Image
+                src="/branding/logo.png"
+                alt="Coco & Nina Jewelry"
+                fill
+                className="object-contain"
+                priority
+              />
+            </div>
           </Link>
 
           {/* Desktop Navigation */}

@@ -11,11 +11,19 @@ export default function Footer() {
           {/* Brand */}
           <div>
             <h3 className="text-lg font-serif font-semibold text-gray-900 mb-4">
-              Coco Nina Jewelry
+              Coco&Nina
             </h3>
-            <p className="text-sm text-gray-600 leading-relaxed">
+            <p className="text-sm text-gray-600 leading-relaxed mb-3">
               Handmade jewelry crafted with passion. Every piece is unique, 
               made with fine wire-wrapping techniques and premium materials.
+            </p>
+            <p className="text-xs text-gray-500 italic">
+              by Barmentech LLC
+            </p>
+            <p className="text-xs text-gray-500 mt-2">
+              1110 Brickell Ave #430K-410<br />
+              Miami, Florida 33131<br />
+              +1 (786) 391-8722
             </p>
           </div>
 
@@ -94,10 +102,10 @@ export default function Footer() {
             </div>
             <p className="text-sm text-gray-600">
               <a 
-                href="mailto:info@coconinajewelry.com"
+                href="mailto:support@barmentech.com"
                 className="hover:text-primary-600 transition-colors"
               >
-                info@coconinajewelry.com
+                support@barmentech.com
               </a>
             </p>
           </div>
@@ -105,7 +113,7 @@ export default function Footer() {
 
         <div className="mt-12 pt-8 border-t border-gray-200">
           <div className="flex flex-col md:flex-row justify-between items-center text-sm text-gray-600">
-            <p>&copy; {currentYear} Coco Nina Jewelry. All rights reserved.</p>
+            <p>&copy; {currentYear} Coco&Nina by Barmentech LLC. All rights reserved.</p>
             <p className="mt-2 md:mt-0">
               Handcrafted with love | Every piece is unique
             </p>

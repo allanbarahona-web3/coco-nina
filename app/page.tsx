@@ -12,6 +12,26 @@ export default async function Home() {
       {/* Hero Section */}
       <Hero />
 
+      {/* Categories Section */}
+      <section className="py-20 bg-white">
+        <div className="container-custom">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-serif font-bold text-gray-900 mb-6">
+              Explore Our Collections
+            </h2>
+            <p className="text-lg text-gray-600">
+              Discover handcrafted jewelry pieces across our four main collections.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {categories.map((category: any) => (
+              <CategoryCard key={category.slug} category={category} />
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* About Section */}
       <section id="about" className="py-20 bg-white">
         <div className="container-custom">
@@ -112,26 +132,6 @@ export default async function Home() {
                 </div>
               ))}
             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Categories Section */}
-      <section className="py-20 bg-white">
-        <div className="container-custom">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-serif font-bold text-gray-900 mb-6">
-              Explore Our Collections
-            </h2>
-            <p className="text-lg text-gray-600">
-              Discover handcrafted jewelry pieces across our four main collections.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {categories.map((category: any) => (
-              <CategoryCard key={category.slug} category={category} />
-            ))}
           </div>
         </div>
       </section>
