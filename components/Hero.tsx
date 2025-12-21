@@ -12,14 +12,17 @@ export default function Hero() {
     {
       image: '/branding/hero1.png',
       title: 'Model wearing necklace',
+      objectPosition: 'center 85%', // Show more of model + jewelry
     },
     {
       image: '/branding/hero2.png',
       title: 'Bracelet craftsmanship',
+      objectPosition: 'center center',
     },
     {
       image: '/branding/hero3.png',
       title: 'Necklace and earrings set',
+      objectPosition: 'center center',
     },
   ];
 
@@ -50,7 +53,7 @@ export default function Hero() {
   };
 
   return (
-    <section className="relative h-dvh w-full overflow-hidden bg-gray-950 pt-20">
+    <section className="relative h-dvh w-full overflow-hidden bg-gray-950">
       {/* Carousel Container */}
       <div className="relative w-full h-full">
         {/* Slides */}
@@ -66,6 +69,7 @@ export default function Hero() {
               src={slide.image}
               alt={slide.title}
               className="absolute inset-0 w-full h-full object-cover"
+              style={{ objectPosition: slide.objectPosition }}
             />
             {/* Dark overlay for better text contrast */}
             <div className="absolute inset-0 bg-black/30" />
