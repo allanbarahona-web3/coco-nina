@@ -10,15 +10,15 @@ export default function Hero() {
 
   const slides = [
     {
-      image: '/branding/Model  Hero 1.png',
+      image: '/branding/hero1.png',
       title: 'Model wearing necklace',
     },
     {
-      image: '/branding/Brazallete Hero 2.png',
+      image: '/branding/hero2.png',
       title: 'Bracelet craftsmanship',
     },
     {
-      image: '/branding/Collar Hero 3.png',
+      image: '/branding/hero3.png',
       title: 'Necklace and earrings set',
     },
   ];
