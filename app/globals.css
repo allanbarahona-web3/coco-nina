@@ -51,6 +51,19 @@
   .min-h-90dvh {
     min-height: 90dvh;
   }
+
+  /* Collection Hero Height */
+  .h-collection-hero {
+    height: 55svh;
+    min-height: 420px;
+    max-height: 680px;
+  }
+
+  @media (max-width: 768px) {
+    .h-collection-hero {
+      height: 45svh;
+    }
+  }
 }
 
 /* Smooth scrolling */

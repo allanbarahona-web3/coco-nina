@@ -16,6 +16,7 @@
 
 import { Suspense } from 'react';
 import { Metadata } from 'next';
+import CollectionHero from '@/components/CollectionHero';
 import CatalogContent from './CatalogContent';
 import { getProducts } from '@/lib/api';
 
@@ -33,16 +34,19 @@ export default async function CatalogPage() {
   const products = await getProducts();
 
   return (
-    <Suspense fallback={
-      <div className="pt-32 pb-20 min-h-screen bg-gray-50">
-        <div className="container-custom text-center">
-          <div className="inline-block w-8 h-8 border-4 border-primary-600 border-t-transparent rounded-full animate-spin" />
-          <p className="mt-4 text-gray-600">Loading catalog...</p>
+    <>
+      <CollectionHero />
+      <Suspense fallback={
+        <div className="pt-32 pb-20 min-h-screen bg-gray-50">
+          <div className="container-custom text-center">
+            <div className="inline-block w-8 h-8 border-4 border-primary-600 border-t-transparent rounded-full animate-spin" />
+            <p className="mt-4 text-gray-600">Loading catalog...</p>
+          </div>
         </div>
-      </div>
-    }>
-      <CatalogContent products={products} />
-    </Suspense>
+      }>
+        <CatalogContent products={products} />
+      </Suspense>
+    </>
   );
 }
 
