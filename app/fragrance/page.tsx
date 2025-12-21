@@ -10,7 +10,7 @@ export default function FragrancePage() {
           ← Back to Home
         </a>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center min-h-screen lg:min-h-auto">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center min-h-dvh lg:min-h-auto">
           {/* Content */}
           <div className="flex flex-col justify-center">
             <h1 className="text-6xl md:text-7xl font-serif font-bold text-gray-900 mb-8">
@@ -35,7 +35,7 @@ export default function FragrancePage() {
           </div>
 
           {/* Image */}
-          <div className="w-full h-96 lg:h-full lg:min-h-screen">
+          <div className="w-full h-96 lg:h-full lg:min-h-dvh">
             <div className="relative w-full h-full rounded-2xl overflow-hidden">
               <img
                 src="/branding/Fragances .png"

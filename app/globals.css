@@ -26,6 +26,31 @@
   .container-custom {
     @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
   }
+
+  /* Dynamic Viewport Height utilities (dvh) - prevents layout jumps on mobile */
+  .h-dvh {
+    height: 100dvh;
+  }
+
+  .min-h-dvh {
+    min-height: 100dvh;
+  }
+
+  .h-50dvh {
+    height: 50dvh;
+  }
+
+  .min-h-50dvh {
+    min-height: 50dvh;
+  }
+
+  .h-90dvh {
+    height: 90dvh;
+  }
+
+  .min-h-90dvh {
+    min-height: 90dvh;
+  }
 }
 
 /* Smooth scrolling */
