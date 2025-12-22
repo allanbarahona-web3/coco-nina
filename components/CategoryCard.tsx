@@ -1,54 +1,64 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import type { Category } from '@/lib/types';
-import { getImageUrl } from '@/lib/utils';
 
 interface CategoryCardProps {
-  category: Category;
+  category: {
+    slug: string;
+    name: string;
+    image: string;
+    description: string;
+  };
 }
 
 export default function CategoryCard({ category }: CategoryCardProps) {
+  const ariaLabel = `View ${category.name} collection`;
+
   return (
     <Link
       href={`/catalog?cat=${category.slug}`}
-      className="group relative overflow-hidden rounded-2xl bg-gray-100 aspect-[4/5] block hover:shadow-2xl transition-all duration-500"
+      aria-label={ariaLabel}
+      className="group relative overflow-hidden rounded-2xl bg-gray-100 aspect-[4/5] block transition-shadow duration-300 focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-gray-400 focus-visible:outline-none"
     >
       {/* Image */}
       <div className="absolute inset-0">
         <Image
-          src={getImageUrl(category.image.src)}
-          alt={category.image.alt}
+          src={category.image}
+          alt={category.name}
           fill
-          className="object-cover transition-transform duration-700 group-hover:scale-110"
+          className="object-cover transition-transform duration-300 group-hover:scale-[1.03] ease-out"
           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
         />
-        {/* Overlay */}
-        <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent group-hover:from-black/80 transition-all duration-500" />
+        {/* Overlay - Default: subtle, Hover: darker */}
+        <div className="absolute inset-0 bg-black/20 group-hover:bg-black/30 transition-colors duration-250 ease-out" />
       </div>
 
       {/* Content */}
       <div className="absolute inset-0 flex flex-col justify-end p-6 text-white">
-        <h3 className="text-2xl md:text-3xl font-serif font-bold mb-2 transform group-hover:translate-y-[-4px] transition-transform duration-300">
+        {/* Title - Always visible */}
+        <h3 className="text-2xl md:text-3xl font-serif font-bold leading-tight">
           {category.name}
         </h3>
-        <p className="text-sm text-gray-200 opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all duration-300">
+
+        {/* Description - Hidden by default, revealed on hover/focus */}
+        <p className="text-sm text-white/90 opacity-0 group-hover:opacity-100 group-focus-visible:opacity-100 transform translate-y-2 group-hover:translate-y-0 group-focus-visible:translate-y-0 transition-all duration-250 ease-out mt-3">
           {category.description}
         </p>
-        
-        {/* Arrow indicator */}
-        <div className="mt-4 inline-flex items-center text-sm font-medium opacity-0 group-hover:opacity-100 transform translate-x-[-10px] group-hover:translate-x-0 transition-all duration-300">
+
+        {/* CTA - Hidden by default, revealed on hover/focus */}
+        <div className="mt-4 inline-flex items-center text-sm font-medium opacity-0 group-hover:opacity-100 group-focus-visible:opacity-100 transform translate-y-2 group-hover:translate-y-0 group-focus-visible:translate-y-0 transition-all duration-250 ease-out">
           <span>View Collection</span>
-          <svg 
-            className="w-5 h-5 ml-2" 
-            fill="none" 
-            stroke="currentColor" 
+          <svg
+            className="w-4 h-4 ml-2"
+            fill="none"
+            stroke="currentColor"
             viewBox="0 0 24 24"
+            aria-hidden="true"
           >
-            <path 
-              strokeLinecap="round" 
-              strokeLinejoin="round" 
-              strokeWidth={2} 
-              d="M17 8l4 4m0 0l-4 4m4-4H3" 
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth={2}
+              d="M13 7l5 5m0 0l-5 5m5-5H6"
             />
           </svg>
         </div>

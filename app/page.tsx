@@ -1,11 +1,9 @@
 import Hero from '@/components/Hero';
 import CategoryCard from '@/components/CategoryCard';
 import ContactForm from '@/components/ContactForm';
-import { getCategories } from '@/lib/api';
 import { Sparkles, Heart, Award } from 'lucide-react';
 
 export default async function Home() {
-  const categories = await getCategories();
   
   return (
     <div className="pt-20">
@@ -25,8 +23,13 @@ export default async function Home() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {categories.map((category: any) => (
-              <CategoryCard key={category.slug} category={category} />
+            {[
+              { slug: 'bracelets', name: 'Bracelets', image: 'https://barmentech-saas.atl1.digitaloceanspaces.com/coco-nina%20/bracelets.png', description: 'Delicate designs handcrafted with timeless detail.' },
+              { slug: 'necklaces', name: 'Necklaces', image: 'https://barmentech-saas.atl1.digitaloceanspaces.com/coco-nina%20/necklaces.png', description: 'Unique statement pieces crafted with fine wire-wrapping techniques.' },
+              { slug: 'rings', name: 'Rings', image: 'https://barmentech-saas.atl1.digitaloceanspaces.com/coco-nina%20/rings.png', description: 'One-of-a-kind rings designed to endure and stand out.' },
+              { slug: 'earrings', name: 'Earrings', image: 'https://barmentech-saas.atl1.digitaloceanspaces.com/coco-nina%20/earrings.png', description: 'Subtle accents that frame and elevate every look.' },
+            ].map((cat) => (
+              <CategoryCard key={cat.slug} category={cat} />
             ))}
           </div>
         </div>
