@@ -36,7 +36,7 @@ export default async function Home() {
       </section>
 
       {/* About Section */}
-      <section id="about" className="py-20 bg-white">
+      <section id="about" className="py-10 bg-white">
         <div className="container-custom">
           <div className="max-w-4xl mx-auto">
             <div className="text-center mb-16">
@@ -44,9 +44,8 @@ export default async function Home() {
                 Crafted with Passion
               </h2>
               <p className="text-lg text-gray-600 leading-relaxed">
-                Each piece of jewelry is meticulously handcrafted using the ancient art of 
-                wire-wrapping (alambrismo). We work with premium materials including 18k gold 
-                plating, natural gemstones, and AAA-grade bronze wire to create truly unique pieces.
+                Each piece is meticulously handcrafted using the ancient art of wire-wrapping (alambrismo).
+                We work with carefully selected materials — natural gemstones, freshwater pearls, and 18k gold plating — to create jewelry that is truly one of a kind.
               </p>
             </div>
 
@@ -60,8 +59,8 @@ export default async function Home() {
                   Unique & Exclusive
                 </h3>
                 <p className="text-gray-600">
-                  Every piece is one of a kind. No mass production, no replicas. 
-                  When you wear our jewelry, you wear something truly unique.
+                  Every piece is created as a single expression. 
+                  No mass production. No replicas. Just one.
                 </p>
               </div>
 
@@ -74,8 +73,7 @@ export default async function Home() {
                   Handcrafted Love
                 </h3>
                 <p className="text-gray-600">
-                  Each piece is carefully crafted by hand using traditional wire-wrapping 
-                  techniques passed down through generations.
+                  Designed and shaped entirely by hand, using traditional wire-wrapping techniques passed down through generations.
                 </p>
               </div>
 
@@ -88,8 +86,7 @@ export default async function Home() {
                   Premium Materials
                 </h3>
                 <p className="text-gray-600">
-                  We use only the finest materials: natural gemstones, freshwater pearls, 
-                  18k gold plating, and premium bronze wire.
+                  Natural gemstones, freshwater pearls, and 18k gold plating — chosen for their beauty, quality, and character.
                 </p>
               </div>
             </div>
@@ -97,43 +94,60 @@ export default async function Home() {
         </div>
       </section>
 
-      {/* Materials Section */}
-      <section className="py-20 bg-gray-50">
+      {/* Materials & Craftsmanship Section */}
+      <section className="py-20 bg-white">
         <div className="container-custom">
-          <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-4xl md:text-5xl font-serif font-bold text-gray-900 mb-6">
-              Premium Materials & Techniques
-            </h2>
-            <p className="text-lg text-gray-600 mb-12">
-              We carefully select each material for its beauty, durability, and uniqueness.
-            </p>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+            {/* Left Column - Text Content */}
+            <div className="order-2 lg:order-1">
+              <h2 className="text-4xl md:text-5xl font-serif font-bold text-gray-900 mb-3">
+                Premium Materials & Craftsmanship
+              </h2>
+              <p className="text-sm text-gray-500 uppercase tracking-widest mb-8 font-light">
+                Carefully chosen. Thoughtfully made. Always one of a kind.
+              </p>
 
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-sm">
-              {[
-                'Wire Wrapping (Alambrismo)',
-                'Bronze AAA Wire',
-                '18k Gold Plating',
-                'Stainless Steel',
-                'Freshwater Pearls',
-                'Mother-of-Pearl',
-                'Zirconia',
-                'Czech Crystals',
-                'Agate',
-                'Jade',
-                'Tiger Eye',
-                'Quartz',
-                'Garnet',
-                'Volcanic Stone',
-                'Indonesian Beads',
-                'Natural Gemstones',
-              ].map((material) => (
-                <div
-                  key={material}
-                  className="bg-white px-4 py-3 rounded-lg text-gray-700 font-medium hover:bg-primary-50 hover:text-primary-700 transition-colors"
-                >
-                  {material}
-                </div>
-              ))}
+              <div className="space-y-6 mb-10">
+                <p className="text-lg text-gray-700 leading-relaxed">
+                  Every piece begins with intention. Our jewelry is handcrafted using traditional wire-wrapping techniques, combining patience, precision, and carefully selected materials to create pieces that exist only once.
+                </p>
+
+                <p className="text-lg text-gray-700 leading-relaxed">
+                  Natural gemstones, freshwater pearls, bronze wire, and 18k gold plating come together through a slow, thoughtful process — guided by the hands and vision of our artisan.
+                </p>
+              </div>
+
+              {/* Curated List */}
+              <div className="space-y-3">
+                {[
+                  'Handcrafted wire-wrapping',
+                  'Natural gemstones',
+                  'Freshwater pearls',
+                  'Bronze wire',
+                  '18k gold plating',
+                ].map((item) => (
+                  <div key={item} className="flex items-start">
+                    <svg className="w-5 h-5 text-primary-600 mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                    </svg>
+                    <span className="text-gray-700">{item}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Right Column - Artisan Image */}
+            <div className="order-1 lg:order-2">
+              <div className="relative rounded-2xl overflow-hidden shadow-lg">
+                <img
+                  src="https://barmentech-saas.atl1.digitaloceanspaces.com/coco-nina%20/artisian-coconina.png"
+                  alt="Our artisan crafting jewelry with precision and care"
+                  className="w-full h-auto object-cover aspect-[4/5]"
+                />
+              </div>
+              <p className="text-sm text-gray-500 text-center mt-6 font-light italic">
+                Meet our artisan — the hands and heart behind each piece.
+              </p>
             </div>
           </div>
         </div>
