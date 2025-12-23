@@ -1,4 +1,5 @@
 import Hero from '@/components/Hero';
+import Image from 'next/image';
 import CategoryCard from '@/components/CategoryCard';
 import ContactForm from '@/components/ContactForm';
 import { Sparkles, Heart, Award } from 'lucide-react';
@@ -94,6 +95,17 @@ export default async function Home() {
         </div>
       </section>
 
+      {/* Editorial Transition */}
+      <section className="py-16 md:py-20 bg-white">
+        <div className="container-custom">
+          <div className="max-w-3xl mx-auto text-center">
+            <p className="text-2xl md:text-3xl font-serif font-light text-gray-700 tracking-wide">
+              “Behind every piece, there is a story — and the hands that shape it.”
+            </p>
+          </div>
+        </div>
+      </section>
+
       {/* Materials & Craftsmanship Section */}
       <section className="py-20 bg-white">
         <div className="container-custom">
@@ -139,10 +151,14 @@ export default async function Home() {
             {/* Right Column - Artisan Image */}
             <div className="order-1 lg:order-2">
               <div className="relative rounded-2xl overflow-hidden shadow-lg">
-                <img
+                <Image
                   src="https://barmentech-saas.atl1.digitaloceanspaces.com/coco-nina%20/artisian-coconina.png"
                   alt="Our artisan crafting jewelry with precision and care"
-                  className="w-full h-auto object-cover aspect-[4/5]"
+                  width={400}
+                  height={500}
+                  className="w-full h-auto object-cover"
+                  priority={false}
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                 />
               </div>
               <p className="text-sm text-gray-500 text-center mt-6 font-light italic">
