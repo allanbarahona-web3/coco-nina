@@ -17,7 +17,7 @@ import type { Product, Category, ApiResponse } from './types';
  * Base API URL from environment variables
  * If not set, the app will use mock data instead
  */
-const API_BASE_URL = process.env.NEXT_PUBLIC_API_BASE_URL;
+const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL;
 
 /**
  * Check if API is configured

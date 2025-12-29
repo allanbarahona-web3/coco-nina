@@ -1,7 +1,7 @@
 'use client';
 
 import Link from 'next/link';
-import { Instagram, Facebook, Mail, Music } from 'lucide-react';
+import { Instagram, Facebook, Mail } from 'lucide-react';
 import { useContactModal } from './ContactForm';
 
 export default function Footer() {
@@ -103,7 +103,9 @@ export default function Footer() {
                 className="w-10 h-10 flex items-center justify-center rounded-full bg-gray-200 text-gray-700 hover:bg-primary-600 hover:text-white transition-colors"
                 aria-label="Follow us on TikTok"
               >
-                <Music className="w-5 h-5" />
+                <svg className="w-5 h-5 fill-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.1 1.82 2.89 2.89 0 0 1 5.1-1.82V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 5.26-2.85.44.44 0 0 0 .04-.57v-2.34a8.16 8.16 0 0 0 4.31 1.52v-3.42a4.85 4.85 0 0 1-.98-.1z"/>
+                </svg>
               </a>
               <button
                 onClick={openModal}
