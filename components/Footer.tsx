@@ -1,8 +1,12 @@
+'use client';
+
 import Link from 'next/link';
-import { Instagram, Facebook, Mail } from 'lucide-react';
+import { Instagram, Facebook, Mail, Music } from 'lucide-react';
+import { useContactModal } from './ContactForm';
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
+  const { openModal } = useContactModal();
 
   return (
     <footer className="bg-gray-50 border-t border-gray-100">
@@ -75,7 +79,7 @@ export default function Footer() {
             </h3>
             <div className="flex space-x-4 mb-4">
               <a
-                href="https://instagram.com"
+                href="https://www.instagram.com/shopcocoandnina/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-10 h-10 flex items-center justify-center rounded-full bg-gray-200 text-gray-700 hover:bg-primary-600 hover:text-white transition-colors"
@@ -84,7 +88,7 @@ export default function Footer() {
                 <Instagram className="w-5 h-5" />
               </a>
               <a
-                href="https://facebook.com"
+                href="https://www.facebook.com/shopcocoandnina/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-10 h-10 flex items-center justify-center rounded-full bg-gray-200 text-gray-700 hover:bg-primary-600 hover:text-white transition-colors"
@@ -93,12 +97,21 @@ export default function Footer() {
                 <Facebook className="w-5 h-5" />
               </a>
               <a
-                href="mailto:info@coconinajewelry.com"
+                href="https://www.tiktok.com/@shopcocoandnina"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-10 h-10 flex items-center justify-center rounded-full bg-gray-200 text-gray-700 hover:bg-primary-600 hover:text-white transition-colors"
+                aria-label="Follow us on TikTok"
+              >
+                <Music className="w-5 h-5" />
+              </a>
+              <button
+                onClick={openModal}
                 className="w-10 h-10 flex items-center justify-center rounded-full bg-gray-200 text-gray-700 hover:bg-primary-600 hover:text-white transition-colors"
                 aria-label="Email us"
               >
                 <Mail className="w-5 h-5" />
-              </a>
+              </button>
             </div>
             <p className="text-sm text-gray-600">
               <a 

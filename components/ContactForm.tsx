@@ -34,7 +34,7 @@ export function ModalProvider({ children }: { children: ReactNode }) {
   );
 }
 
-const WHATSAPP_URL = `https://wa.me/50663040039?text=Hi%20Coco%20Nina,%20I%20have%20an%20inquiry%20about%20your%20jewelry.`;
+const WHATSAPP_URL = `https://wa.me/17863918722?text=Hi%20Coco%20Nina,%20I%20have%20an%20inquiry%20about%20your%20jewelry.`;
 
 function ContactFormContent() {
   const { openModal } = useContactModal();

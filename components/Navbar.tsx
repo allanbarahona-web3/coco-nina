@@ -3,11 +3,13 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { useState } from 'react';
-import { Menu, X, ChevronDown } from 'lucide-react';
+import { Menu, X, ChevronDown, Instagram, Facebook, Music, Mail } from 'lucide-react';
+import { useContactModal } from './ContactForm';
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isCollectionsOpen, setIsCollectionsOpen] = useState(false);
+  const { openModal } = useContactModal();
 
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
 
@@ -103,6 +105,44 @@ export default function Navbar() {
             >
               Contact
             </Link>
+
+            {/* Social Icons */}
+            <div className="flex items-center space-x-3 ml-6 pl-6 border-l border-gray-200">
+              <a
+                href="https://www.instagram.com/shopcocoandnina/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-8 h-8 flex items-center justify-center rounded-full text-gray-700 hover:bg-gray-100 hover:text-primary-600 transition-all"
+                aria-label="Follow us on Instagram"
+              >
+                <Instagram className="w-4 h-4" />
+              </a>
+              <a
+                href="https://www.facebook.com/shopcocoandnina/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-8 h-8 flex items-center justify-center rounded-full text-gray-700 hover:bg-gray-100 hover:text-primary-600 transition-all"
+                aria-label="Follow us on Facebook"
+              >
+                <Facebook className="w-4 h-4" />
+              </a>
+              <a
+                href="https://www.tiktok.com/@shopcocoandnina"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-8 h-8 flex items-center justify-center rounded-full text-gray-700 hover:bg-gray-100 hover:text-primary-600 transition-all"
+                aria-label="Follow us on TikTok"
+              >
+                <Music className="w-4 h-4" />
+              </a>
+              <button
+                onClick={openModal}
+                className="w-8 h-8 flex items-center justify-center rounded-full text-gray-700 hover:bg-gray-100 hover:text-primary-600 transition-all"
+                aria-label="Email us"
+              >
+                <Mail className="w-4 h-4" />
+              </button>
+            </div>
           </div>
 
           {/* Mobile Menu Button */}

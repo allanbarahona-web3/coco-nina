@@ -31,7 +31,7 @@ export function getImageUrl(imagePath: string): string {
  * Format WhatsApp URL with encoded message
  */
 export function getWhatsAppUrl(message?: string): string {
-  const phoneNumber = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || '+506XXXXXXXX';
+  const phoneNumber = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || '+17863918722';
   const defaultMessage = process.env.NEXT_PUBLIC_WHATSAPP_MESSAGE || 
     'Hello, I saw your jewelry catalog and would like to inquire about a piece.';
   

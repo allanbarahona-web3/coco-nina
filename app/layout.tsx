@@ -4,6 +4,8 @@ import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import WhatsAppFloat from "@/components/WhatsAppFloat";
+import ContactModal from "@/components/ContactModal";
+import { ModalProvider } from "@/components/ContactForm";
 
 const inter = Inter({ 
   subsets: ["latin"],
@@ -38,12 +40,15 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${inter.variable} ${playfair.variable}`}>
       <body className={inter.className}>
-        <Navbar />
-        <main className="min-h-screen">
-          {children}
-        </main>
-        <Footer />
-        <WhatsAppFloat />
+        <ModalProvider>
+          <Navbar />
+          <main className="min-h-screen">
+            {children}
+          </main>
+          <Footer />
+          <ContactModal />
+          <WhatsAppFloat />
+        </ModalProvider>
       </body>
     </html>
   );
