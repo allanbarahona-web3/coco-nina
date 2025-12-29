@@ -194,7 +194,7 @@ export async function getCategories(): Promise<Category[]> {
  * Submit contact form data
  * 
  * NestJS Endpoint: POST /api/contact
- * Expected Payload: { name, email, whatsapp?, message }
+ * Expected Payload: { fullName, email, whatsappNumber, message }
  * 
  * @param formData - Contact form data
  * @returns Success response
@@ -211,20 +211,29 @@ export async function submitContactForm(formData: {
   }
 
   try {
+    // Map form fields to backend expected format
+    const payload = {
+      fullName: formData.name,
+      email: formData.email,
+      whatsappNumber: formData.whatsapp || '',
+      message: formData.message,
+    };
+
     const response = await fetch(`${API_BASE_URL}/api/contact`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify(formData),
+      body: JSON.stringify(payload),
     });
 
     if (!response.ok) {
-      throw new Error(`Failed to submit form: ${response.statusText}`);
+      const errorData = await response.json().catch(() => ({}));
+      throw new Error(errorData.message || `Failed to submit form: ${response.statusText}`);
     }
 
     const data = await response.json();
-    return { success: true, message: data.message };
+    return { success: true, message: data.message || 'Form submitted successfully' };
   } catch (error) {
     console.error('[API] Contact form submission failed:', error);
     throw error;

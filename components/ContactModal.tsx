@@ -92,7 +92,7 @@ export default function ContactModal() {
     setIsLoading(true);
 
     try {
-      await submitContactForm(formData);
+      const result = await submitContactForm(formData);
       setIsSubmitted(true);
 
       // Close modal after 2 seconds of success state
@@ -101,7 +101,8 @@ export default function ContactModal() {
       }, 2000);
     } catch (error) {
       console.error('Form submission error:', error);
-      setErrors({ submit: 'Failed to send message. Please try again.' });
+      const errorMessage = error instanceof Error ? error.message : 'Failed to send message. Please try again.';
+      setErrors({ submit: errorMessage });
     } finally {
       setIsLoading(false);
     }
