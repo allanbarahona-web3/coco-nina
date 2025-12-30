@@ -92,7 +92,17 @@ export default function ContactModal() {
     setIsLoading(true);
 
     try {
-      const result = await submitContactForm(formData);
+      // Detect user's browser language
+      const userLanguage = navigator.language.split('-')[0];
+
+      const payload = {
+  name: formData.name,
+  email: formData.email,
+  whatsapp: formData.whatsapp || '',
+  message: formData.message,
+  language: userLanguage,
+};
+      const result = await submitContactForm(payload);
       setIsSubmitted(true);
 
       // Close modal after 5 seconds of success state
