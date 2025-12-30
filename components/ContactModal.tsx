@@ -95,10 +95,10 @@ export default function ContactModal() {
       const result = await submitContactForm(formData);
       setIsSubmitted(true);
 
-      // Close modal after 2 seconds of success state
+      // Close modal after 5 seconds of success state
       setTimeout(() => {
         handleClose();
-      }, 2000);
+      }, 5000);
     } catch (error) {
       console.error('Form submission error:', error);
       const errorMessage = error instanceof Error ? error.message : 'Failed to send message. Please try again.';
