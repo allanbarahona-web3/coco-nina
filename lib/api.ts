@@ -194,7 +194,7 @@ export async function getCategories(): Promise<Category[]> {
  * Submit contact form data
  * 
  * NestJS Endpoint: POST /api/contact
- * Expected Payload: { fullName, email, whatsappNumber, message }
+ * Expected Payload: { fullName, email, whatsappNumber, message, language }
  * 
  * @param formData - Contact form data
  * @returns Success response
@@ -204,6 +204,7 @@ export async function submitContactForm(formData: {
   email: string;
   whatsapp?: string;
   message: string;
+  language?: string;
 }): Promise<{ success: boolean; message?: string }> {
   if (!isApiConfigured()) {
     console.warn('[API] Contact form submission skipped (API not configured)');
@@ -217,6 +218,7 @@ export async function submitContactForm(formData: {
       email: formData.email,
       whatsappNumber: formData.whatsapp || '',
       message: formData.message,
+      language: formData.language || 'en', // Default to English if not provided
     };
 
     const response = await fetch(`${API_BASE_URL}/api/contact`, {
